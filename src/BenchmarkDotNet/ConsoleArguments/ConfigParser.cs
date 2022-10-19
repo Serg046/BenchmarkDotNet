@@ -446,7 +446,7 @@ namespace BenchmarkDotNet.ConsoleArguments
         {
             return baseJob
                 .WithRuntime(runtime)
-                .WithToolchain(MonoToolchain.From(new NetCoreAppSettings(msBuildMoniker, msBuildMoniker, runtime.Name, options.CliPath?.FullName, options.RestorePath?.FullName)));
+                .WithToolchain(MonoToolchain.From(new NetCoreAppSettings(msBuildMoniker, null, runtime.Name, options.CliPath?.FullName, options.RestorePath?.FullName)));
         }
 
         private static Job MakeMonoAOTLLVMJob(Job baseJob, CommandLineOptions options, string msBuildMoniker)
